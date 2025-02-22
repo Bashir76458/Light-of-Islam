@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadan Companion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ramadan Companion</h1>
+
+    <!-- Daily Reflection -->
+    <div class="container">
+        <h2>Daily Reflection</h2>
+        <p id="reflection">Loading...</p>
+        <button onclick="newReflection()">Get Reflection</button>
+    </div>
+
+    <!-- Fasting Tracker -->
+    <div class="container">
+        <h2>Fasting Tracker</h2>
+        <p>Days Completed: <span id="fastingCount">0</span>/30</p>
+        <button onclick="trackFasting()">Mark as Completed</button>
+    </div>
+
+    <!-- Duas & Quranic Verses -->
+    <div class="container">
+        <h2>Dua & Quranic Verses</h2>
+        <p id="dua">Tap below for a new Dua.</p>
+        <button onclick="newDua()">Get Dua</button>
+    </div>
+
+    <!-- Good Deeds Log -->
+    <div class="container">
+        <h2>Good Deeds Log</h2>
+        <textarea id="deedInput" placeholder="Enter a good deed..."></textarea>
+        <button onclick="logDeed()">Log Deed</button>
+        <ul id="deedList"></ul>
+    </div>
+
+    <script>
+        // Daily Reflections
+        const reflections = [
+            "Fasting is a shield; it will protect you from the Hellfire and prevent you from sins.",
+            "Whoever fasts Ramadan out of faith will have all his past sins forgiven.",
+            "The best charity is that given in Ramadan."
+        ];
+        function newReflection() {
+            const randomIndex = Math.floor(Math.random() * reflections.length);
+            document.getElementById('reflection').innerText = reflections[randomIndex];
+        }
+
+        // Fasting Tracker
+        let fastingDays = localStorage.getItem('fastingDays') || 0;
+        document.getElementById('fastingCount').innerText = fastingDays;
+        function trackFasting() {
+            fastingDays++;
+            localStorage.setItem('fastingDays', fastingDays);
+            document.getElementById('fastingCount').innerText = fastingDays;
+        }
+
+        // Duas
+        const duas = [
+            "اللَّهُمَّ إِنِّي أَسْأَلُكَ الجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ",
+            "اللهم إنك عفو تحب العفو فاعف عني",
+            "اللهم تقبل صيامنا وقيامنا"
+        ];
+        function newDua() {
+            const randomIndex = Math.floor(Math.random() * duas.length);
+            document.getElementById('dua').innerText = duas[randomIndex];
+        }
+
+        // Good Deeds Log
+        function logDeed() {
+            const deedInput = document.getElementById('deedInput').value;
+            if (deedInput.trim() !== "") {
+                const deedList = document.getElementById('deedList');
+                const listItem = document.createElement('li');
+                listItem.textContent = deedInput;
+                deedList.appendChild(listItem);
+                document.getElementById('deedInput').value = "";
+            }
+        }
+    </script>
+</body>
+</html>#80FF00
+!DOCTYPEhtml
+<html>
+    <head>

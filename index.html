@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Light of Islam - Ramadan Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>The Light of Islam</h1>
+        <p>Ramadan Companion</p>
+    </header>
+
+    <div class="container">
+        <h2>Hadith of the Day</h2>
+        <p id="hadith">Loading...</p>
+        <button onclick="newHadith()">Get Hadith</button>
+        <a href="hadith.html" class="link-btn">View All Hadiths</a>
+    </div>
+
+    <div class="container">
+        <h2>Fasting Tracker</h2>
+        <p>Days Completed: <span id="fastingCount">0</span>/30</p>
+        <button onclick="trackFasting()">Mark as Completed</button>
+    </div>
+
+    <div class="container">
+        <h2>Dua & Quranic Verses</h2>
+        <p id="dua">Tap below for a new Dua.</p>
+        <button onclick="newDua()">Get Dua</button>
+        <a href="duas.html" class="link-btn">View All Duas</a>
+    </div>
+
+    <footer>
+        Powered by The Light of Islam
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

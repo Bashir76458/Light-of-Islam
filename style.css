@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?mosque') no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+h1, h2 {
+    color: #FFD700;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+button, .link-btn {
+    padding: 10px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+}
