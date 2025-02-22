@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan Companion</title>
+    <title>Ramadan Companion - The Light of Islam</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,15 +36,49 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+        #darkMode {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background: #555;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .dark-mode .container {
+            background: #333;
+            color: white;
+        }
     </style>
 </head>
 <body>
     <h1>Ramadan Companion</h1>
+    <button id="darkMode" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <!-- Hijri Date Display -->
+    <div class="container">
+        <h2>Hijri Date</h2>
+        <p id="hijriDate">Loading...</p>
+    </div>
+
+    <!-- Prayer Times -->
+    <div class="container">
+        <h2>Prayer Times</h2>
+        <p id="prayerTimes">Fetching prayer times...</p>
+    </div>
+
+    <!-- Countdown to Iftar -->
+    <div class="container">
+        <h2>Countdown to Iftar</h2>
+        <p id="iftarCountdown">Loading...</p>
+    </div>
 
     <!-- Daily Reflection -->
     <div class="container">
         <h2>Daily Reflection</h2>
-        <p id="reflection">click the button below </p>
+        <p id="reflection">Click the button below</p>
         <button onclick="newReflection()">Get Reflection</button>
     </div>
 
@@ -62,64 +96,46 @@
         <button onclick="newDua()">Get Dua</button>
     </div>
 
-    <!-- Good Deeds Log -->
+    <!-- Tasbih Counter -->
     <div class="container">
-        <h2>Good Deeds Log</h2>
-        <textarea id="deedInput" placeholder="Enter a good deed..."></textarea>
-        <button onclick="logDeed()">Log Deed</button>
-        <ul id="deedList"></ul>
+        <h2>Tasbih Counter</h2>
+        <p id="tasbihCount">0</p>
+        <button onclick="increaseTasbih()">+1</button>
+        <button onclick="resetTasbih()">Reset</button>
+    </div>
+
+    <!-- Charity Tracker -->
+    <div class="container">
+        <h2>Charity Tracker</h2>
+        <textarea id="charityInput" placeholder="Enter charity amount or deed..."></textarea>
+        <button onclick="logCharity()">Log Charity</button>
+        <ul id="charityList"></ul>
     </div>
 
     <script>
-        // Daily Reflections
-        const reflections = [
-            "Fasting is a shield; it will protect you from the Hellfire and prevent you from sins.",
-            "Whoever fasts Ramadan out of faith will have all his past sins forgiven.",
-            "The best charity is that given in Ramadan.",
-            "Day 1: Reflect on the purpose of fasting – How does fastiwwng help you become closer to Allah?",
-            "Day 2: Gratitude – What are three blessings in your life that you often take for granted?",
-            "Day 3: Sincerity in Worship – Are your prayers and good deeds purely for Allah’s sake?",
-            "Day 4: Seeking Forgiveness – What sins do you need to seek forgiveness for, and how can you avoid them?",
-            "Day 5: Strengthening Patience – How has fasting tested your patience, and how can you improve?",
-            "Day 6: The Power of Dua – What personal and communal duas do you need to focus on this Ramadan?",
-            "Day 7: The Impact of the Quran – How often do you engage with the Quran, and how can you build a stronger relationship with it?",
-
-"<b>Week 2: Strengthening the Soul</b>"
-
-           "Day 8: Controlling the Tongue – How can you improve your speech to avoid gossip, lies, and hurtful words?",
-           "Day 9: Kindness and Generosity – What small acts of kindness can you do today?",
-           "Day 10: Humility – Are you seeking praise for your worship, or is it purely for Allah?",
-           "Day 11: Trust in Allah (Tawakkul) – In what areas of your life do you need to trust Allah more?",
-           "Day 12: The Power of Sadaqah – How can you give charity beyond just money?",
-           "Day 13: Purifying Intentions – Are your daily actions aligned with your faith and sincerity?",
-           "Day 14: The Beauty of Night Prayers – How can you make Qiyam-ul-Layl a consistent habit?",
-
-    "<b>Week 3: Living the Sunnah</b>",
-
-           "Day 15: The Character of the Prophet (ﷺ) – Which Sunnah practice can you implement today?",
-           "Day 16: Family and Community – How can you strengthen your bond with family and neighbors?",
-           "Day 17: Serving Others – How can you help someone in need today?",
-"Day 18: Managing Anger – How can you control your anger and respond with patience?",
-           "Day 19: The Impact of Good Companionship – Are your friends bringing you closer to Allah?",
-           "Day 20: Avoiding Time Wasters – What distractions do you need to cut back on?",
-           "Day 21: The Rewards of Fasting – How can you maximize the rewards of the last 10 days?",
-
-"<b>Week 4: Seeking Laylatul Qadr & Preparing for Life After Ramadan</b>"
-
-           "Day 22: The Last 10 Nights – How can you increase your ibadah (worship) during these blessed nights?",
-           "Day 23: Signs of Laylatul Qadr – What are the signs, and how can you seek this powerful night?",
-           "Day 24: The Power of Istighfar – How can seeking forgiveness transform your life?",
-           "Day 25: Keeping the Momentum – How can you maintain the good habits you’ve built after Ramadan?",
-           "Day 26: Reassessing Your Goals – What spiritual, personal, and social goals do you have post-Ramadan?",
-           "Day 27: Expressing Gratitude – How can you continue to be grateful for the lessons learned this month?",
-           "Day 28: Strengthening Your Relationship with Allah – How can you ensure your faith remains strong beyond Ramadan?",
-           "Day 29: The Celebration of Eid – How can you make Eid a meaningful and spiritually uplifting day?",
-           "Day 30: A New Beginning – What are the key takeaways from this Ramadan, and how will you apply them moving forward?",
-        ];
-        function newReflection() {
-            const randomIndex = Math.floor(Math.random() * reflections.length);
-            document.getElementById('reflection').innerText = reflections[randomIndex];
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
         }
+
+        // Hijri Date Display
+        function displayHijriDate() {
+            const hijriDate = new Date().toLocaleDateString('ar-SA', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('hijriDate').innerText = hijriDate;
+        }
+        displayHijriDate();
+
+        // Countdown to Iftar
+        function updateIftarCountdown() {
+            const now = new Date();
+            const iftarTime = new Date();
+            iftarTime.setHours(18, 30, 0); // Set Iftar time (adjust as needed)
+            const diff = iftarTime - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById('iftarCountdown').innerText = `Time left: ${hours}h ${minutes}m`;
+        }
+        setInterval(updateIftarCountdown, 1000);
+        updateIftarCountdown();
 
         // Fasting Tracker
         let fastingDays = localStorage.getItem('fastingDays') || 0;
@@ -130,207 +146,51 @@
             document.getElementById('fastingCount').innerText = fastingDays;
         }
 
-        // Duas
-        const duas = [
-         "Day 3: Seeking Acceptance of Fasting
-اللَّهُمَّ تَقَبَّلْ مِنَّا صِيَامَنَا وَقِيَامَنَا
-Allahumma taqabbal minna siyamana wa qiyamana.
-O Allah, accept our fasting and our prayers.
-"Day 4: Seeking Forgiveness
-اللَّهُمَّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُسْلِمِينَ أَجْمَعِينَ
-Allahummaghfir li wa liwalidayya wa lil-muslimeena ajma'een.
-O Allah, forgive me, my parents, and all Muslims.",
-"Day 5: Asking for Strength in Worship
-اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ
-Allahumma a’inni ‘ala dhikrika wa shukrika wa husni ‘ibadatika.
-O Allah, help me remember You, be grateful to You, and worship You in excellence.",
-"Day 6: Seeking Guidance
-اللَّهُمَّ اهْدِنِي وَثَبِّتْنِي عَلَى دِينِكَ
-Allahummah-dini wa thabbitni ‘ala deenik.
-O Allah, guide me and keep me steadfast upon Your religion.",
-"Day 7: Seeking Protection from Hellfire
-اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ
-Allahumma ajirni minan-naar.
-O Allah, save me from the Hellfire.",
-"Day 8: Seeking Blessings in Time
-اللَّهُمَّ بَارِكْ لِي فِي وَقْتِي وَأَعْمَالِي
-Allahumma barik li fi waqti wa a’mali.
-O Allah, bless my time and my deeds.",
-"Day 9: Seeking an Increase in Faith
-اللَّهُمَّ زِدْنِي إِيمَانًا وَيَقِينًا
-Allahumma zidni imanan wa yaqinan.
-O Allah, increase me in faith and certainty.",
-"Day 10: Asking for Piety
-اللَّهُمَّ اجْعَلْنِي مِنَ الْمُتَّقِينَ
-Allahumma aj’alni minal-muttaqeen.
-O Allah, make me among the pious.",
-"Day 11: Seeking Good Character
-اللَّهُمَّ حَسِّنْ خُلُقِي كَمَا حَسَّنْتَ خَلْقِي
-Allahumma hassin khuluqi kama hassanta khalqi.
-O Allah, beautify my character as You have beautified my creation.",
-Day 10: Asking for Righteous Friends
-اللَّهُمَّ ارزُقْنِي صُحْبَةَ الصَّالِحِينَ
-Allahumma arzuqni suhbat as-salihin.
-O Allah, grant me the companionship of the righteous.
-Day 11: Seeking Contentment
-اللَّهُمَّ اجْعَلْنِي قَنُوعًا بِمَا رَزَقْتَنِي
-Allahumma aj’alni qanu’an bima razaqtani.
-O Allah, make me content with what You have provided me.
-Day 12: Asking for Sincerity
-اللَّهُمَّ اجْعَلْ عَمَلِي خَالِصًا لِوَجْهِكَ
-Allahumma aj’al ‘amali khalisan liwajhika.
-O Allah, make my actions sincere for Your sake.
-
-
----
-
-Day 13: Seeking Knowledge
-
-اللَّهُمَّ زِدْنِي عِلْمًا نَافِعًا
-Allahumma zidni ‘ilman nafi’a.
-O Allah, increase me in beneficial knowledge.
-
-
----
-
-Day 14: Seeking a Good End
-
-اللَّهُمَّ اخْتِمْ لِي بِحُسْنِ الْخَاتِمَةِ
-Allahumma ikhtim li bi husnil khatimah.
-O Allah, grant me a good ending.
-
-
----
-
-Day 15: Asking for Mercy
-
-اللَّهُمَّ ارْحَمْنِي بِرَحْمَتِكَ الْوَاسِعَةِ
-Allahumma arhamni birahmatika al-wasi’a.
-O Allah, have mercy on me with Your vast mercy.
-
-
----
-
-Day 16: Seeking Patience
-
-اللَّهُمَّ اجْعَلْنِي مِنَ الصَّابِرِينَ
-Allahumma aj’alni minas-sabireen.
-O Allah, make me among the patient.
-
-
----
-
-Day 17: Asking for Rizq (Sustenance)
-
-اللَّهُمَّ ارْزُقْنِي رِزْقًا حَلَالًا طَيِّبًا
-Allahumma arzuqni rizqan halalan tayyiban.
-O Allah, provide me with lawful and pure sustenance.
-
-
----
-
-Day 18: Seeking Light in the Heart
-
-اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا
-Allahumma aj’al fi qalbi nooran.
-O Allah, place light in my heart.
-
-
----
-
-Day 19: Seeking Barakah (Blessing) in Family
-
-اللَّهُمَّ بَارِكْ فِي أَهْلِي وَذُرِّيَّتِي
-Allahumma barik fi ahli wa dhurriyyati.
-O Allah, bless my family and offspring.
-
-
----
-
-Day 20: Asking for Jannah (Paradise)
-
-اللَّهُمَّ اجْعَلْنِي مِنْ أَهْلِ الْجَنَّةِ
-Allahumma aj’alni min ahlil-jannah.
-O Allah, make me among the people of Paradise.
-
-
----
-
-Day 21: Seeking Forgiveness for the Deceased
-
-اللَّهُمَّ اغْفِرْ لِمَوْتَى الْمُسْلِمِينَ
-Allahummaghfir limawta al-muslimeen.
-O Allah, forgive the deceased Muslims.
-
-
----
-
-Day 22: Seeking Love of Allah
-
-اللَّهُمَّ اجْعَلْ حُبَّكَ أَحَبَّ إِلَيَّ مِنْ كُلِّ شَيْءٍ
-Allahumma aj’al hubbaka ahabba ilayya min kulli shay’.
-O Allah, make Your love the most beloved thing to me.
-
-
----
-
-Day 23: Asking for Success in Both Worlds
-
-اللَّهُمَّ آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً
-Rabbana atina fid-dunya hasanatan wa fil-akhirati hasanatan.
-O our Lord, grant us goodness in this world and goodness in the Hereafter.
-
-
----
-
-Day 24: Seeking Strength in Faith
-
-اللَّهُمَّ ثَبِّتْ قَلْبِي عَلَى دِينِكَ
-Allahumma thabbit qalbi ‘ala deenik.
-O Allah, keep my heart firm upon Your religion.
-
-
----
-
-Day 25: Seeking Protection from Evil
-
-اللَّهُمَّ اكْفِنِي شَرَّ مَا خَلَقْتَ
-Allahumma ikfini sharra ma khalaqt.
-O Allah, protect me from the evil of what You have created.
-
-
----
-
-Day 26-30: Special Laylatul Qadr Dua
-
-اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
-Allahumma innaka ‘afuwwun tuhibbul ‘afwa fa’fu ‘anni.
-O Allah, You are Most Forgiving, and You love forgiveness, so forgive me.
-
-
----
-
-These Duas can help you stay spiritually connected during Ramadan
-        ];
-        function newDua() {
-            const randomIndex = Math.floor(Math.random() * duas.length);
-            document.getElementById('dua').innerText = duas[randomIndex];
+        // Tasbih Counter
+        let tasbihCount = 0;
+        function increaseTasbih() {
+            tasbihCount++;
+            document.getElementById('tasbihCount').innerText = tasbihCount;
+        }
+        function resetTasbih() {
+            tasbihCount = 0;
+            document.getElementById('tasbihCount').innerText = tasbihCount;
         }
 
-        // Good Deeds Log
-        function logDeed() {
-            const deedInput = document.getElementById('deedInput').value;
-            if (deedInput.trim() !== "") {
-                const deedList = document.getElementById('deedList');
+        // Charity Tracker
+        function logCharity() {
+            const charityInput = document.getElementById('charityInput').value;
+            if (charityInput.trim() !== "") {
+                const charityList = document.getElementById('charityList');
                 const listItem = document.createElement('li');
-                listItem.textContent = deedInput;
-                deedList.appendChild(listItem);
-                document.getElementById('deedInput').value = "";
+                listItem.textContent = charityInput;
+                charityList.appendChild(listItem);
+                document.getElementById('charityInput').value = "";
             }
         }
     </script>
 </body>
-</html>#80FF00
-!DOCTYPEhtml
-<html>
-    <head>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
