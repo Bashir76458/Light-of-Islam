@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramadan Companion</title>
-    <link rel="stylesheet" href="style.css"> <!-- Linking the CSS file -->
-    <a href="my first code.html>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Light of Islam</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dua.html">Duas</a></li>
+            <li><a href="hadith.html">Hadiths</a></li>
+            <li><a href="quran.html">Quran Audio</a></li>
+            <li><a href="prayer.html">Prayer Times</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Ramadan Counter -->
+    <div class="ramadan-counter">
+        <h1>Today is <span id="ramadan-day"></span> of Ramadan</h1>
+    </div>
+
+    <!-- Dynamic Islamic Quotes -->
+    <div class="quotes-box">
+        <blockquote id="quote-text">Loading Islamic Quote...</blockquote>
+    </div>
+
+    <!-- Main Content -->
     <header>
         <h1>Ramadan Companion</h1>
         <nav>
@@ -16,8 +41,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="dua.html">Dua</a></li>
                 <li><a href="hadith.html">Hadith</a></li>
-                <li><a href="fasting.html">Fasting</a></li>
-                <li><a href="good-deeds.html">Good Deeds</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +53,7 @@
     <!-- Daily Reflection -->
     <div class="container">
         <h2>Daily Reflection</h2>
-        <p id="reflection">what do you know about your deen? </p>
+        <p id="reflection">What do you know about your Deen?</p>
         <button onclick="newReflection()">Get Reflection</button>
     </div>
 
@@ -53,8 +76,9 @@
         <button onclick="newDua()">Get Dua</button>
         <a href="duas.html" class="link-btn">View All Duas</a>
     </div>
+
     <!-- Good Deeds Log -->
-    <div class="container">q
+    <div class="container">
         <h2>Good Deeds Log</h2>
         <textarea id="deedInput" placeholder="Enter a good deed..."></textarea>
         <button onclick="logDeed()">Log Deed</button>
@@ -62,9 +86,16 @@
     </div>
 
     <footer>
-        <b>Powered by The Light of Islam <br>contact us:<br>Mr.Alhassan Fadl:0500673339<br>Mr.Muhammad Bashir:0506676458.</b>
+        <b>Powered by The Light of Islam</b><br>
+        <p>Contact us:</p>
+        <p>Mr. Alhassan Fadl: 0500673339</p>
+        <p>Mr. Muhammad Bashir: 0506676458</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript Files -->
+    <script src="assets/js/ramadan-counter.js"></script>
+    <script src="assets/js/quotes.js"></script>
+    <script src="assets/js/script.js"></script>
+
 </body>
 </html>
