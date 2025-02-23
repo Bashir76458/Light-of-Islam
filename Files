@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 li.innerText = `${key}: ${timings[key]}`;
                 list.appendChild(li);
             }
+
         })
         .catch(error => console.error("Error fetching prayer times:", error));
 });
