@@ -88,10 +88,10 @@ h1, h2 {
     padding: 20px;
     border-radius: 8px;
     margin: 15px 0;
-    display: inline-block
-    max-width: 80%
+    display: inline-block;
+    max-width: 80%;
     transition: opacity 1s
-ease-in-out.
+ease-in-out;
 }
 
 
