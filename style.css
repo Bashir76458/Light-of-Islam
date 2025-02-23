@@ -81,6 +81,16 @@ h1, h2 {
     color: #FFD700;
 }
 
+.link-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #004d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
 /* Container */
 .container {
     margin-top: 20vh;
