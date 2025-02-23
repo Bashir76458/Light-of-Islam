@@ -73,6 +73,7 @@ header {
     background: rgba(0, 0, 0, 0.6);
     padding: 15px;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 /* Headings */
@@ -82,11 +83,17 @@ h1, h2 {
 
 /* Container */
 .container {
+    margin-top: 20vh;
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 8px;
     margin: 15px 0;
+    display: inline-block
+    max-width: 80%
+    transition: opacity 1s
+ease-in-out.
 }
+
 
 /* Buttons */
 button, .link-btn {
