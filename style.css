@@ -1,10 +1,67 @@
-body {
-    font-family: Arial, sans-serif;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/8/84/Al-Masjid_an-Nabawi_Courtyard.jpg') no-repeat center center fixed;
-    background-size: cover;
+body {/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #0a1931;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #ffba08;
+    color: #0a1931;
+}
+
+/* Ramadan Counter */
+.ramadan-counter {
     text-align: center;
-    color: light green;
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #ffba08;
+}
+
+/* Quotes Box */
+.quotes-box {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #fff;
+    background: #0a1931;
     padding: 20px;
+    border-radius: 8px;
+}
 }
 
 header {
@@ -16,6 +73,7 @@ header {
 h1, h2 {
     color: #FFD700;
 }
+
 
 .container {
     background: rgba(0, 0, 0, 0.7);
