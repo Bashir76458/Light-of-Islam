@@ -91,6 +91,19 @@ h1, h2 {
     margin-top: 10px;
 }
 
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px white, 0 0 10px blue, 0 0 15px blue; }
+    50% { text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue; }
+    100% { text-shadow: 0 0 5px white, 0 0 10px blue, 0 0 15px blue; }
+}
+
+.glow-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    animation: glowing 1.5s infinite alternate;
+}
+
 /* Container */
 .container {
     margin-top: 20vh;
