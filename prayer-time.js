@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-    const city = "Accra"; // Change to your location
+    const city = "Accra";
     const apiURL = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Ghana&method=2`;
 
     fetch(apiURL)
@@ -7,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(data => {
             const timings = data.data.timings;
             const list = document.getElementById("prayer-times");
+            list.innerHTML = "";
             for (let key in timings) {
                 let li = document.createElement("li");
                 li.innerText = `${key}: ${timings[key]}`;
@@ -15,3 +17,5 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error fetching prayer times:", error));
 });
+
+
