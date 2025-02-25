@@ -1,43 +1,18 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    background: linear-gradient(to right, #141E30, #243B55);
+    color: white;
     font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
-body {
-    background: #f4f4f4;
-}
-
-/* Navigation Bar */
 .navbar {
     background: #0a1931;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-}
-
-.navbar .logo {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 10px;
 }
 
 .nav-links a {
     color: white;
-    text-decoration: none;
     padding: 8px 15px;
     border-radius: 5px;
     transition: 0.3s;
@@ -48,117 +23,30 @@ body {
     color: #0a1931;
 }
 
-/* Ramadan Counter */
-.ramadan-counter {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-top: 20px;
-    color: #ffba08;
-}
-
-/* Quotes Box */
-.quotes-box {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #fff;
-    background: #0a1931;
-    padding: 20px;
-    border-radius: 8px;
-}
-
-/* Header */
-header {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-/* Headings */
-h1, h2 {
-    color: #FFD700;
-}
-
-.link-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #004d4d;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-@keyframes glowing {
-    0% { text-shadow: 0 0 5px white, 0 0 10px blue, 0 0 15px blue; }
-    50% { text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue; }
-    100% { text-shadow: 0 0 5px white, 0 0 10px blue, 0 0 15px blue; }
-}
-
-.glow-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: white;
-    animation: glowing 1.5s infinite alternate;
-}
-
-/* Container */
 .container {
-    margin-top: 20vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    border-radius: 8px;
-    margin: 15px 0;
-    display: inline-block;
-    max-width: 80%;
-    transition: opacity 1s
-ease-in-out;
-}
-
-input, textarea {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #darkMode {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            background: #555;
-        }
-        .dark-mode {
-            background-color: #222;
-            color: white;
-        }
-        .dark-mode .container {
-            background: #333;
-            color: white;
-        }
-
-
-/* Buttons */
-button, .link-btn {
-    padding: 10px;
-    background: green;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-}
-
-/* Footer */
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
     border-radius: 10px;
+    text-align: center;
 }
+
+button {
+    padding: 10px;
+    background: #ffba08;
+    border: none;
+    cursor: pointer;
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
