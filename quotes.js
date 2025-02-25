@@ -7,7 +7,10 @@ const quotes = [
 ];
 
 document.addEventListener("DOMContentLoaded", function() {
-    const quoteText = document.getElementById("quote-text");
+    const quoteText = document.querySelector(".glow-text");
     const randomIndex = Math.floor(Math.random() * quotes.length);
     quoteText.innerText = quotes[randomIndex];
 });
+
+
+
