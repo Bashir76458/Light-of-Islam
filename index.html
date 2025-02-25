@@ -1,107 +1,46 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan Companion</title>
+    <title>Ramadan Companion - The Light of Islam</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <a href="my first code.html">
-    <a href="prayer-time.js">
-    <a href="ramadan-counter.js">
-    <a href="quotes.js">
-    <a href="hadith.html">
-    <a href="duas.html">
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">Light of Islam</div>
+        <div class="logo">Ramadan Companion</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="dua.html">Duas</a></li>
-            <li><a href="hadith.html">Hadiths</a></li>
-            <li><a href="quran.html">Quran Audio</a></li>
-            <li><a href="prayer.html">Prayer Times</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="prayer-times.html">Prayer Times</a></li>
+            <li><a href="duas.html">Duas</a></li>
+            <li><a href="quotes.html">Quotes</a></li>
+            <li><a href="ramadan-counter.html">Ramadan Counter</a></li>
         </ul>
     </nav>
 
-    <!-- Ramadan Counter -->
-    <div class="ramadan-counter">
-        <h1>Today is <span id="ramadan-day"></span> of Ramadan</h1>
-    </div>
-
-    <!-- Dynamic Islamic Quotes -->
-    <div class="quotes-box">
-        <blockquote id="quote-text">Loading Islamic Quote...</blockquote>
-    </div>
-
-    <!-- Main Content -->
     <header>
-        <h1>Ramadan Companion</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="dua.html">Dua</a></li>
-                <li><a href="hadith.html">Hadith</a></li>
-            </ul>
-        </nav>
+        <h1>Welcome to The Light of Islam Ramadan Companion</h1>
+        <p>Your all-in-one guide for Ramadan!</p>
     </header>
 
-    <section>
-        <h2>Welcome to Ramadan Companion</h2>
-        <p>Use this app to stay connected to your faith during Ramadan.</p>
-    </section>
-
-    <!-- Daily Reflection -->
-    <div class="container">
-        <h2>Daily Reflection</h2>
-        <p id="reflection">What do you know about your Deen?</p>
-        <button onclick="newReflection()">Get Reflection</button>
+    <div class="container ramadan-counter">
+        <h2>Today is Ramadan Day: <span id="ramadan-day">Loading...</span></h2>
     </div>
 
-    <div class="container">
-        <h2>Hadith of the Day</h2>
-        <p id="hadith">Loading...</p>
-        <button onclick="newHadith()">Get Hadith</button>
-        <a href="hadith.html" class="link-btn">View All Hadiths</a>
-    </div>
-
-    <div class="container">
-        <h2>Fasting Tracker</h2>
-        <p>Days Completed: <span id="fastingCount">0</span>/30</p>
-        <button onclick="trackFasting()">Mark as Completed</button>
-    </div>
-
-    <div class="container">
-        <h2>Dua & Quranic Verses</h2>
-        <p id="dua">Tap below for a new Dua.</p>
-        <button onclick="newDua()">Get Dua</button>
-        <a href="duas.html" class="link-btn">View All Duas</a>
-    </div>
-
-    <!-- Good Deeds Log -->
-    <div class="container">
-        <h2>Good Deeds Log</h2>
-        <textarea id="deedInput" placeholder="Enter a good deed..."></textarea>
-        <button onclick="logDeed()">Log Deed</button>
-        <ul id="deedList"></ul>
+    <div class="container quotes-box">
+        <h2>Daily Islamic Quote</h2>
+        <p id="quote-text">Loading...</p>
     </div>
 
     <footer>
-        <b>Powered by The Light of Islam</b><br>
-        <p>Contact us:</p>
-        <p>Mr. Alhassan Fadl: 0500673339</p>
-        <p>Mr. Muhammad Bashir: 0506676458</p>
+        <p>Powered by Light of Islam | Ramadan 2025</p>
     </footer>
 
-    <!-- JavaScript Files -->
     <script src="ramadan-counter.js"></script>
     <script src="quotes.js"></script>
-    <script src="prayer-time.js"></script>
-
 </body>
 </html>
+
