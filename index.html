@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,39 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ramadan Companion - The Light of Islam</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="quotes.js"></script>
+    <script defer src="ramadan-counter.js"></script>
+    <script defer src="prayer-time.js"></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Ramadan Companion</div>
+        <div class="logo">Light of Islam</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="prayer-times.html">Prayer Times</a></li>
             <li><a href="duas.html">Duas</a></li>
-            <li><a href="quotes.html">Quotes</a></li>
+            <li><a href="hadith.html">Hadith</a></li>
+            <li><a href="prayer-time.html">Prayer Times</a></li>
             <li><a href="ramadan-counter.html">Ramadan Counter</a></li>
         </ul>
+        <button id="darkMode" onclick="toggleDarkMode()">🌙</button>
     </nav>
 
-    <header>
-        <h1>Welcome to The Light of Islam Ramadan Companion</h1>
-        <p>Your all-in-one guide for Ramadan!</p>
-    </header>
+    <section class="container">
+        <h1>Welcome to the Best Ramadan Experience!</h1>
+        <p class="glow-text">"Indeed, with hardship comes ease." - Quran 94:6</p>
+        <button onclick="newReflection()">Get Reflection</button>
+    </section>
 
-    <div class="container ramadan-counter">
-        <h2>Today is Ramadan Day: <span id="ramadan-day">Loading...</span></h2>
-    </div>
+    <section class="container">
+        <h2>Ramadan Counter</h2>
+        <p>Day <span id="ramadan-day">Loading...</span> of 30</p>
+    </section>
 
-    <div class="container quotes-box">
-        <h2>Daily Islamic Quote</h2>
-        <p id="quote-text">Loading...</p>
-    </div>
+    <section class="container">
+        <h2>Daily Prayer Times</h2>
+        <ul id="prayer-times">Fetching...</ul>
+    </section>
 
-    <footer>
-        <p>Powered by Light of Islam | Ramadan 2025</p>
-    </footer>
+    <section class="container">
+        <h2>Countdown to Iftar</h2>
+        <p id="iftarCountdown">Loading...</p>
+    </section>
 
-    <script src="ramadan-counter.js"></script>
-    <script src="quotes.js"></script>
+    <footer>Powered by Light of Islam</footer>
 </body>
 </html>
+
 
