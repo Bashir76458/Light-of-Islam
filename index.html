@@ -10,6 +10,7 @@
     <script defer src="prayer-time.js"></script>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Light of Islam</div>
         <ul class="nav-links">
@@ -21,29 +22,32 @@
         <button id="darkMode" onclick="toggleDarkMode()">🌙</button>
     </nav>
 
-    <section class="container">
+    <!-- Welcome Section -->
+    <header>
         <h1>Welcome to the Best Ramadan Experience!</h1>
         <p class="glow-text">"Indeed, with hardship comes ease." - Quran 94:6</p>
         <button onclick="newReflection()">Get Reflection</button>
-    </section>
+    </header>
 
-    <section class="container">
+    <!-- Ramadan Counter -->
+    <div class="section">
         <h2>Ramadan Counter</h2>
         <p>Day <span id="ramadan-day">Loading...</span> of 30</p>
-    </section>
+    </div>
 
-    <section class="container">
+    <!-- Daily Prayer Times -->
+    <div class="section">
         <h2>Daily Prayer Times</h2>
         <ul id="prayer-times">Fetching...</ul>
-    </section>
+    </div>
 
-    <section class="container">
+    <!-- Countdown to Iftar -->
+    <div class="section">
         <h2>Countdown to Iftar</h2>
         <p id="iftarCountdown">Loading...</p>
-    </section>
+    </div>
 
+    <!-- Footer -->
     <footer>Powered by Light of Islam</footer>
 </body>
 </html>
-
-
