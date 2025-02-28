@@ -1,12 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const ramadanStart = new Date("2025-03-10");
-    const today = new Date();
-    const diffTime = today - ramadanStart;
-    const dayOfRamadan = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+const ramadanStart = new Date("March 10, 2024"); // Adjust this based on actual Ramadan start date
 
-    document.getElementById("ramadan-day").innerText = 
-        dayOfRamadan > 0 && dayOfRamadan <= 30 ? dayOfRamadan : "Not Ramadan";
-});
+function updateRamadanCounter() {
+  const today = new Date();
+  const timeDiff = today - ramadanStart;
+  const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24)) + 1;
+  document.getElementById('ramadan-day').textContent = daysPassed;
+}
 
-
-
+updateRamadanCounter();
