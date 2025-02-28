@@ -1,54 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramadan Companion - The Light of Islam</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="htmlsheet" href="my first code.html"
-    <script defer src="quotes.js"></script>
-    <script defer src="ramadan-counter.js"></script>
-    <script defer src="prayer-time.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramadan Companion - Light of Islam</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- External JavaScript Files -->
+  <script defer src="quotes.js"></script>
+  <script defer src="ramadan-counter.js"></script>
+  <script defer src="prayer-time.js"></script>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">Light of Islam</div>
-        <ul class="nav-links">
-            <li><a href="duas.html">Duas</a></li>
-            <li><a href="hadith.html">Hadith</a></li>
-            <li><a href="prayer-time.html">Prayer Times</a></li>
-            <li><a href="ramadan-counter.html">Ramadan Counter</a></li>
-        </ul>
-        <button id="darkMode" onclick="toggleDarkMode()">🌙</button>
-    </nav>
 
-    <!-- Welcome Section -->
-    <header>
-        <h1>Welcome to the Best Ramadan Experience!</h1>
-        <p class="glow-text">"Indeed, with hardship comes ease." - Quran 94:6</p>
-        <button onclick="newReflection()">Get Reflection</button>
-    </header>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">Light of Islam</div>
+    <ul class="nav-links">
+      <li><a href="duas.html">Duas</a></li>
+      <li><a href="hadith.html">Hadith</a></li>
+      <li><a href="prayer-time.html">Prayer Times</a></li>
+      <li><a href="ramadan-counter.html">Ramadan Counter</a></li>
+    </ul>
+    <button id="darkMode" onclick="toggleDarkMode()">🌙</button>
+  </nav>
 
-    <!-- Ramadan Counter -->
-    <div class="section">
-        <h2>Ramadan Counter</h2>
-        <p>Day <span id="ramadan-day">Loading...</span> of 30</p>
-    </div>
+  <!-- Welcome Section -->
+  <header>
+    <h1>Welcome to the Best Ramadan Experience!</h1>
+    <p class="glow-text">"Indeed, with hardship comes ease." - Quran 94:6</p>
+    <button onclick="newReflection()">Get Reflection</button>
+  </header>
 
-    <!-- Daily Prayer Times -->
-    <div class="section">
-        <h2>Daily Prayer Times</h2>
-        <ul id="prayer-times">Fetching...</ul>
-    </div>
+  <!-- Ramadan Counter -->
+  <div class="section">
+    <h2>Ramadan Counter</h2>
+    <p>Day <span id="ramadan-day">Loading...</span> of 30</p>
+  </div>
 
-    <!-- Countdown to Iftar -->
-    <div class="section">
-        <h2>Countdown to Iftar</h2>
-        <p id="iftarCountdown">Loading...</p>
-    </div>
+  <!-- Hijri Date Display -->
+  <div class="container">
+    <h2>Hijri Date</h2>
+    <p id="hijriDate">Loading...</p>
+  </div>
 
-    <!-- Footer -->
-    <footer>Powered by Light of Islam</footer>
+  <!-- Daily Prayer Times -->
+  <div class="section">
+    <h2>Daily Prayer Times</h2>
+    <ul id="prayer-times">Fetching...</ul>
+  </div>
+
+  <!-- Tasbih Counter -->
+  <div class="container">
+    <h2>Tasbih Counter</h2>
+    <p id="tasbihCount">0</p>
+    <button onclick="increaseTasbih()">+1</button>
+    <button onclick="resetTasbih()">Reset</button>
+  </div>
+
+  <!-- Ihsaan (Good Deed) Tracker -->
+  <div class="container">
+    <h2>Ihsaan (Good Deed) Tracker</h2>
+    <textarea id="charityInput" placeholder="Enter charity amount or deed..."></textarea>
+    <button onclick="logCharity()">Log Charity</button>
+    <ul id="charityList"></ul>
+  </div>
+
+  <!-- Fasting Tracker (Fixed) -->
+  <div class="container">
+    <h2>Fasting Tracker</h2>
+    <p>Days Fasted: <span id="fastingCount">0</span></p>
+    <button onclick="trackFasting()">Add Day</button>
+  </div>
+
+  <!-- Countdown to Iftar -->
+  <div class="section">
+    <h2>Countdown to Iftar</h2>
+    <p id="iftarCountdown">Loading...</p>
+  </div>
+
+  <!-- JavaScript Code -->
+  <script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    // Hijri Date Display
+    function displayHijriDate() {
+        const hijriDate = new Date().toLocaleDateString('ar-SA', {
+            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+        });
+        document.getElementById('hijriDate').innerText = hijriDate;
+    }
+    displayHijriDate();
+
+    // Countdown to Iftar
+    function updateIftarCountdown() {
+        const now = new Date();
+        const iftarTime = new Date();
+        iftarTime.setHours(18, 30, 0); // Set Iftar time (adjust as needed)
+        const diff = iftarTime - now;
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('iftarCountdown').innerText = `Time left: ${hours}h ${minutes}m`;
+    }
+    setInterval(updateIftarCountdown, 1000);
+    updateIftarCountdown();
+
+    // Fasting Tracker
+    let fastingDays = localStorage.getItem('fastingDays') || 0;
+    document.getElementById('fastingCount').innerText = fastingDays;
+    function trackFasting() {
+        fastingDays++;
+        localStorage.setItem('fastingDays', fastingDays);
+        document.getElementById('fastingCount').innerText = fastingDays;
+    }
+
+    // Tasbih Counter
+    let tasbihCount = 0;
+    function increaseTasbih() {
+        tasbihCount++;
+        document.getElementById('tasbihCount').innerText = tasbihCount;
+    }
+    function resetTasbih() {
+        tasbihCount = 0;
+        document.getElementById('tasbihCount').innerText = tasbihCount;
+    }
+
+    // Good Deed Tracker (Fixed)
+    function logCharity() {
+        const charityInput = document.getElementById('charityInput').value;
+        if (charityInput.trim() !== "") {
+            const charityList = document.getElementById('charityList');
+            const listItem = document.createElement('li');
+            listItem.textContent = charityInput;
+            charityList.appendChild(listItem);
+            document.getElementById('charityInput').value = "";
+        }
+    }
+
+    // Reflection Function (Added)
+    function newReflection() {
+        alert("This is a new reflection!"); // Replace with real reflections if available.
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer>Powered by Light of Islam</footer>
+
 </body>
 </html>
