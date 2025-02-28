@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,26 +6,57 @@
     <title>Hadith - The Light of Islam</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="hadith.js"></script>
+    <script defer src="script.js"></script> <!-- For dark mode & other interactions -->
 </head>
 <body>
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <a href="index.html" class="link-btn">Home</a>
+        <a href="index.html" class="logo">Light of Islam</a>
+        <ul class="nav-links">
+            <li><a href="duas.html">Duas</a></li>
+            <li><a href="prayer-time.html">Salah</a></li>
+            <li><a href="ramadan-counter.html">Fasting</a></li>
+        </ul>
+        <button id="darkMode">🌙</button>
     </nav>
-    
+
+    <!-- Hadith of the Day Section -->
     <section class="container">
-        <h1>Daily Hadith</h1>
-        <p id="hadith-text">Tap below for a new Hadith</p>
-        <button onclick="newHadith()">Get Hadith</button>
+        <h1>Hadith of the Day</h1>
+        <div class="hadith-card">
+            <p class="arabic-hadith" id="arabic-hadith">يتم التحميل...</p>
+            <p id="hadith-text">Loading hadith...</p>
+            <p class="hadith-source" id="hadith-source"></p>
+        </div>
+        <button id="newHadith">Get New Hadith</button>
     </section>
 
-    <footer>Powered by Light of Islam</footer>
+    <!-- More Hadiths Section -->
+    <section class="container">
+        <h2>More Hadiths</h2>
+        <div class="hadith-list">
+            <div class="hadith-item">
+                <p class="arabic-hadith">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</p>
+                <p class="hadith-text">"Actions are judged by intentions."</p>
+                <p class="hadith-source">- Bukhari & Muslim</p>
+            </div>
+            <div class="hadith-item">
+                <p class="arabic-hadith">الدُّنْيَا سِجْنُ الْمُؤْمِنِ وَجَنَّةُ الْكَافِرِ</p>
+                <p class="hadith-text">"The world is a prison for the believer and a paradise for the disbeliever."</p>
+                <p class="hadith-source">- Sahih Muslim</p>
+            </div>
+            <div class="hadith-item">
+                <p class="arabic-hadith">الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ</p>
+                <p class="hadith-text">"A Muslim is one from whose tongue and hand others are safe."</p>
+                <p class="hadith-source">- Bukhari</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Powered by Light of Islam | Ramadan 2025</p>
+    </footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
