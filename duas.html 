@@ -1,1 +1,75 @@
-hh
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duas - Light of Islam</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> <!-- General script handling -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo"><b>Light of Islam</b></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="hadith.html">Hadith</a></li>
+            <li><a href="prayer-time.html">Salah</a></li>
+            <li><a href="ramadan-counter.html">Fasting</a></li>
+        </ul>
+        <button id="darkMode">🌙</button>
+    </nav>
+
+    <!-- Page Header -->
+    <header>
+        <h1>Powerful Duas for Ramadan</h1>
+        <p class="glow-text">"And your Lord says, 'Call upon Me; I will respond to you.'" - Quran 40:60</p>
+    </header>
+
+    <!-- Daily Dua Section -->
+    <div class="container">
+        <h2>Today's Special Dua</h2>
+        <p id="daily-dua">Loading...</p>
+    </div>
+
+    <!-- Preloaded Duas -->
+    <div class="section">
+        <h2>Essential Duas</h2>
+        
+        <div class="dua-box">
+            <p><b>Suhoor Dua:</b></p>
+            <p class="arabic">وَبِصَوْمِ غَدٍ نَّوَيْتُ مِنْ شَهْرِ رَمَضَانَ</p>
+            <p class="translation">"I intend to keep the fast for tomorrow in the month of Ramadan."</p>
+        </div>
+
+        <div class="dua-box">
+            <p><b>Iftar Dua:</b></p>
+            <p class="arabic">اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَبِكَ آمَنْتُ وَعَلَيْكَ تَوَكَّلْتُ وَعَلَىٰ رِزْقِكَ أَفْطَرْتُ</p>
+            <p class="translation">"O Allah! I fasted for You, I believe in You, I put my trust in You, and with Your sustenance, I break my fast."</p>
+        </div>
+
+        <div class="dua-box">
+            <p><b>Dua for Forgiveness:</b></p>
+            <p class="arabic">اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي</p>
+            <p class="translation">"O Allah, You are forgiving and love forgiveness, so forgive me."</p>
+        </div>
+
+        <div class="dua-box">
+            <p><b>Laylatul Qadr Dua:</b></p>
+            <p class="arabic">اللَّهُمَّ إِنِّي أَسْأَلُكَ العَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ</p>
+            <p class="translation">"O Allah, I ask You for well-being in this world and the Hereafter."</p>
+        </div>
+    </div>
+
+    <!-- Random Dua Button -->
+    <div class="container">
+        <button id="newDua">Get Random Dua</button>
+    </div>
+
+    <footer>
+        <p>Powered by Light of Islam | Ramadan 2025</p>
+    </footer>
+
+</body>
+</html>
