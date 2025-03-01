@@ -1,50 +1,196 @@
-/* General Reset */
+/* ========================= */
+/* GENERAL RESET */
+/* ========================= */
 
-{ margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Poppins', sans-serif; }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
+/* ========================= */
+/* BODY & GENERAL STYLING */
+/* ========================= */
 
-body { 
+body {
     background: linear-gradient(to right, #0a1931, #16213e);
     color: white;
-    text-align: center; }
+    text-align: center;
+}
 
-/* Light of Islam - Standalone Header */ .main-header { font-size: 2.5rem; font-weight: bold; text-transform: uppercase; padding: 20px; background: #ffba08; color: #0a1931; border-radius: 10px; margin: 10px auto; width: 90%; }
+/* ========================= */
+/* MAIN HEADER - LIGHT OF ISLAM */
+/* ========================= */
 
-/* Navigation Bar */ .navbar { background: #0a1931; display: flex; justify-content: center; align-items: center; padding: 15px; border-radius: 10px; }
+.main-header {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 20px;
+    background: #ffba08;
+    color: #0a1931;
+    border-radius: 10px;
+    margin: 10px auto;
+    width: 90%;
+}
 
-.nav-links { list-style: none; display: flex; gap: 10px; /* Reduced spacing */ padding: 0; }
+/* ========================= */
+/* NAVIGATION BAR */
+/* ========================= */
 
-.nav-links li { display: inline; }
+.navbar {
+    background: #0a1931;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+}
 
-.nav-links a { color: white; text-decoration: none; font-size: 1.1rem; padding: 12px 18px; border-radius: 8px; transition: all 0.3s ease; font-family: 'Cairo', sans-serif; /* Stylish Arabic-inspired font / background: rgba(255, 255, 255, 0.2); / Subtle background */ }
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px; /* Reduced spacing */
+    padding: 0;
+}
 
-.nav-links a:hover { background: #ffba08; color: #0a1931; }
+.nav-links li {
+    display: inline;
+}
 
-/* Main Sections */ .container, .section { background: rgba(255, 255, 255, 0.1); padding: 20px; margin: 15px auto; border-radius: 8px; width: 90%; max-width: 800px; }
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 12px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-family: 'Cairo', sans-serif; /* Stylish Arabic-inspired font */
+    background: rgba(255, 255, 255, 0.2); /* Subtle background */
+}
 
-/* Headings */ h1, h2 { color: #FFD700; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+.nav-links a:hover {
+    background: #ffba08;
+    color: #0a1931;
+}
 
-/* Buttons */ button, .link-btn { padding: 12px 20px; background: #ffba08; color: #0a1931; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 10px; transition: all 0.3s ease; }
+/* ========================= */
+/* MAIN SECTIONS */
+/* ========================= */
 
-button:hover, .link-btn:hover { background: #e6a600; }
+.container, 
+.section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+}
 
-/* Footer */ footer { margin-top: 20px; padding: 10px; background: rgba(0, 0, 0, 0.8); color: white; border-radius: 10px; }
+/* ========================= */
+/* HEADINGS */
+/* ========================= */
 
-/* Hadith Section Styling */ .hadith-card { background: rgba(255, 255, 255, 0.15); padding: 20px; border-radius: 10px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); margin-top: 20px; transition: transform 0.3s ease; }
+h1, h2 {
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-.hadith-card:hover { transform: scale(1.02); }
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
 
-#hadith-text { font-size: 1.2rem; font-style: italic; line-height: 1.5; color: #FFD700; }
+button, 
+.link-btn {
+    padding: 12px 20px;
+    background: #ffba08;
+    color: #0a1931;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
 
-.hadith-btn { padding: 12px 18px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 15px; transition: all 0.3s ease; }
+button:hover, 
+.link-btn:hover {
+    background: #e6a600;
+}
 
-.hadith-btn:hover { background: #218838; }
+/* ========================= */
+/* FOOTER */
+/* ========================= */
 
-/* Ramadan Counter Styling */ .counter-container { background: rgba(255, 255, 255, 0.1); padding: 30px; margin: 20px auto; border-radius: 10px; text-align: center; max-width: 600px; }
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+}
 
-.counter-container h1 { font-size: 2rem; color: #FFD700; }
+/* ========================= */
+/* HADITH SECTION */
+/* ========================= */
 
-.counter-container p { font-size: 1.2rem; margin-top: 10px; }
+.hadith-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hadith-card:hover {
+    transform: scale(1.02);
+}
+
+#hadith-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: #FFD700;
+}
+
+.hadith-btn {
+    padding: 12px 18px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.hadith-btn:hover {
+    background: #218838;
+}
+
+/* ========================= */
+/* RAMADAN COUNTER SECTION */
+/* ========================= */
+
+.counter-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 600px;
+}
+
+.counter-container h1 {
+    font-size: 2rem;
+    color: #FFD700;
+}
+
+.counter-container p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
