@@ -5,16 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ramadan Companion - Light of Islam</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script> <!-- Main JavaScript -->
-    <script defer src="prayer-time.js"></script> <!-- Prayer Time API -->
+    
+    <!-- PWA Files -->
+    <link rel="manifest" href="manifest.json">
+    <script defer src="service-worker.js"></script>
+    
+    <!-- Main JavaScript Files -->
+    <script defer src="script.js"></script> 
+    <script defer src="prayer-time.js"></script> 
     <script defer src="duas.js"></script>
     <script defer src="ramadan-counter.js"></script>
     <script defer src="console-info.js"></script>
+    <script defer src="notifications.js"></script> <!-- Push Notifications -->
+
+    <!-- PWA and Push Notification Setup -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log('Service Worker Registered'))
+                .catch(error => console.error('Service Worker Registration Failed:', error));
+        }
+
+        // Request notification permission
+        document.addEventListener("DOMContentLoaded", () => {
+            if ("Notification" in window) {
+                Notification.requestPermission().then(permission => {
+                    if (permission === "granted") {
+                        console.log("Push Notifications Enabled!");
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 <body>
-    <header class="ramadan-header" color= "yellow">
-        <h1>Your Ramadan companion</h1>
+    <header class="ramadan-header" color="yellow">
+        <h1>Your Ramadan Companion</h1>
     </header>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">Light of Islam</div>
@@ -101,7 +129,7 @@
     </div>
 
     <!-- Footer -->
-    <footer>Powered by Light of Islam<br>contact us:(whatsapp)<br>Mr.Alhassan Fadl:0500673339<br>Mr.Muhammad Bashir:0506676458</footer>
+    <footer>Powered by Light of Islam<br>Contact us: (WhatsApp)<br>Mr. Alhassan Fadl: 0500673339<br>Mr. Muhammad Bashir: 0506676458</footer>
 
 </body>
 </html>
