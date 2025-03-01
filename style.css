@@ -4,17 +4,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
 }
 
 body {
     background: linear-gradient(to right, #0a1931, #16213e);
     color: white;
     text-align: center;
-    padding-bottom: 50px; /* Ensures no content is hidden under footer */
 }
 
-/* Light of Islam - Standalone Header */
+/* Outstanding Ramadan Header */
 .main-header {
     font-size: 2.5rem;
     font-weight: bold;
@@ -25,12 +23,6 @@ body {
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.main-header:hover {
-    transform: scale(1.03);
 }
 
 /* Navigation Bar */
@@ -41,13 +33,12 @@ body {
     align-items: center;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px; /* Better spacing */
+    gap: 15px;
     padding: 0;
 }
 
@@ -61,174 +52,41 @@ body {
     font-size: 1.1rem;
     padding: 12px 20px;
     border-radius: 8px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
     font-family: 'Cairo', sans-serif;
     background: rgba(255, 255, 255, 0.2);
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links .active {
     background: #ffba08;
     color: #0a1931;
-    transform: scale(1.05);
 }
 
-/* Main Sections */
-.container, .section {
+/* Ramadan Counter Styling */
+.counter-container {
     background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    margin: 15px auto;
+    padding: 30px;
+    margin: 20px auto;
     border-radius: 10px;
-    width: 90%;
-    max-width: 800px;
-    transition: all 0.3s ease-in-out;
+    text-align: center;
+    max-width: 600px;
 }
 
-.container:hover, .section:hover {
-    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-}
-
-/* Headings */
-h1, h2 {
+.counter-container h1 {
+    font-size: 2rem;
     color: #FFD700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    transition: color 0.3s ease-in-out;
 }
 
-h1:hover, h2:hover {
-    color: #ffba08;
-}
-
-/* Buttons */
-button, .link-btn {
-    padding: 12px 20px;
-    background: #ffba08;
-    color: #0a1931;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+.counter-container p {
+    font-size: 1.2rem;
     margin-top: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-button:hover, .link-btn:hover {
-    background: #e6a600;
-    transform: scale(1.05);
 }
 
 /* Footer */
 footer {
     margin-top: 20px;
-    padding: 12px;
+    padding: 10px;
     background: rgba(0, 0, 0, 0.8);
     color: white;
     border-radius: 10px;
-    font-size: 0.9rem;
-}
-
-/* Hadith Section Styling */
-.hadith-card {
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.hadith-card:hover {
-  transform: scale(1.05);
-}
-
-#hadith-text {
-  font-size: 1.2rem;
-  font-style: italic;
-  line-height: 1.5;
-  color: #FFD700;
-}
-
-/* Hadith Button */
-.hadith-btn {
-  padding: 12px 18px;
-  background: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 15px;
-  transition: all 0.3s ease-in-out;
-}
-
-.hadith-btn:hover {
-  background: #218838;
-  transform: scale(1.05);
-}
-
-/* Ramadan Counter Styling */
-.counter-container {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  margin: 20px auto;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 600px;
-  box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-.counter-container:hover {
-  transform: scale(1.02);
-}
-
-.counter-container h1 {
-  font-size: 2.5rem;
-  color: #FFD700;
-}
-
-.counter-container p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* Fasting Progress Bar */
-.fasting-progress {
-  width: 100%;
-  height: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  margin-top: 15px;
-  overflow: hidden;
-  position: relative;
-}
-
-.fasting-progress .progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #ffba08;
-  transition: width 0.5s ease-in-out;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-    .main-header {
-        font-size: 2rem;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .nav-links a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-    }
-
-    .counter-container {
-        width: 95%;
-    }
 }
