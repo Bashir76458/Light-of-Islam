@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const hadithText = document.getElementById("hadith-text");
-    const hadithButton = document.querySelector(".hadith-btn");
+    const hadithButton = document.getElementById("newHadith");
 
     // 30 Hadiths for each day
     const hadiths = [
