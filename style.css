@@ -25,6 +25,16 @@ body {
     width: 90%;
 }
 
+/* Ramadan Companion Title */
+#ramadan-companion {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 10px;
+    color: yellow;
+}
+
 /* Navigation Bar */
 .navbar {
     background: #0a1931;
@@ -82,56 +92,6 @@ body {
     margin-top: 10px;
 }
 
-/* Footer */
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    border-radius: 10px;
-}
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #0d1b2a;
-    color: white;
-    text-align: center;
-}
-
-/* Navigation Bar */
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #1b263b;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-    background-color: #415a77;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: background 0.3s;
-}
-
-nav a:hover {
-    background-color: #778da9;
-}
-
-/* Ramadan Companion Title */
-#ramadan-companion {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    padding: 10px;
-}
-
 /* Welcome Section */
 .welcome-text {
     font-size: 24px;
@@ -167,14 +127,27 @@ nav a:hover {
     color: yellow;
 }
 
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+}
+
 /* Adjustments for smaller screens */
 @media (max-width: 600px) {
-    nav {
+    .navbar {
         flex-direction: column;
     }
 
-    nav a {
-        width: 100%;
+    .nav-links {
+        flex-direction: column;
         text-align: center;
+    }
+
+    .nav-links a {
+        width: 100%;
     }
 }
