@@ -1,10 +1,15 @@
-const ramadanStart = new Date("March 10, 2024"); // Adjust this based on actual Ramadan start date
+// Set the Start Date of Ramadan (Adjust If Necessary)
+const ramadanStartDate = new Date("2025-03-01"); // Change if needed
 
-function updateRamadanCounter() {
-  const today = new Date();
-  const timeDiff = today - ramadanStart;
-  const daysPassed = Math.floor(timeDiff / (1000 * 60 * 60 * 24)) + 1;
-  document.getElementById('ramadan-day').textContent = daysPassed;
-}
+// Get Today's Date
+const today = new Date();
 
-updateRamadanCounter();
+// Calculate the Difference in Days
+const timeDiff = today - ramadanStartDate;
+const currentRamadanDay = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)) + 1; 
+
+// Ensure the Day is Within 1-30 Range
+const ramadanDay = (currentRamadanDay > 30 || currentRamadanDay < 1) ? 1 : currentRamadanDay;
+
+// Update the Ramadan Counter on the Page
+document.getElementById("ramadan-day").innerText = ramadanDay + " / 30";
