@@ -10,6 +10,7 @@ body {
     background: linear-gradient(to right, #0a1931, #16213e);
     color: white;
     text-align: center;
+    font-family: 'Cairo', sans-serif;
 }
 
 /* Outstanding Ramadan Header */
@@ -23,16 +24,6 @@ body {
     border-radius: 10px;
     margin: 10px auto;
     width: 90%;
-}
-
-/* Ramadan Companion Title */
-#ramadan-companion {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    padding: 10px;
-    color: yellow;
 }
 
 /* Navigation Bar */
@@ -63,7 +54,6 @@ body {
     padding: 12px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    font-family: 'Cairo', sans-serif;
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -92,39 +82,69 @@ body {
     margin-top: 10px;
 }
 
-/* Welcome Section */
-.welcome-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: yellow;
-    margin-top: 20px;
-}
-
-/* Boxes & Sections */
-.box {
-    background-color: #1b263b;
-    padding: 15px;
-    border-radius: 10px;
-    margin: 10px;
-}
-
-.highlight {
-    font-size: 20px;
-    font-weight: bold;
-    color: yellow;
-}
-
 /* Hadith Section */
 .hadith-container {
-    background-color: #1b263b;
-    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 .hadith-text {
     font-style: italic;
     color: yellow;
+}
+
+/* Good Deed Tracker */
+.good-deed-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.good-deed-container input, .good-deed-container button {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+
+.good-deed-container button {
+    background: #ffba08;
+    color: #0a1931;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.good-deed-container button:hover {
+    background: #ff9900;
+}
+
+/* Tasbih Counter */
+.tasbih-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.tasbih-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tasbih-button:hover {
+    background: #ffba08;
+    color: #0a1931;
 }
 
 /* Footer */
@@ -136,18 +156,19 @@ footer {
     border-radius: 10px;
 }
 
-/* Adjustments for smaller screens */
+/* Responsive Design */
 @media (max-width: 600px) {
-    .navbar {
-        flex-direction: column;
-    }
-
     .nav-links {
         flex-direction: column;
-        text-align: center;
+        gap: 10px;
     }
-
+    
     .nav-links a {
         width: 100%;
+        text-align: center;
+    }
+    
+    .counter-container, .hadith-container, .good-deed-container, .tasbih-container {
+        max-width: 90%;
     }
 }
